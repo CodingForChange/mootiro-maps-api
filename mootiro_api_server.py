@@ -1,9 +1,9 @@
+# encoding: utf-8
+
 import bottle
-import json
 import psycopg2
 
-from bottle import route, run, response
-from requests import ConnectionError
+from bottle import route, run
 
 app_v1 = bottle.Bottle()
 
@@ -20,7 +20,13 @@ def get_organizations():
     query = _get_connection()
     query.execute("SELECT * from organization_organization")
     org = query.fetchall()
-    return org
+    query.close()
+
+    results = []
+    for item in org:
+        results.append(str(item).strip())
+
+    return results
 
 bottle.mount('/v1', app_v1)
 
