@@ -3,6 +3,28 @@ API for Mootiro Maps
 
 A public API for Mootiro Maps.
 
+Requirements for developer enviroment
+---------------------------------------------
+* Python 2.7
+* iPython (recommended)
+
+Requirements for the Python enviroment
+-----------------------
+
+The API dependencies are listed in requirements.txt file.
+
+* bottle
+* psycopg2
+
+Running API on localhost:8000
+--------------------------------
+
+    $ ipython -i PostmonServer.py
+    >> _standalone()
+
+If you want to run the API in another port, just put a parameter in the _standalone call.
+
+
         Copyright [2013] [Coding for Change]
 
     Licensed under the Apache License, Version 2.0 (the "License");
