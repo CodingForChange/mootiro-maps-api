@@ -36,7 +36,7 @@ To configure PostgreSQL correctly to use do:
 
 And to import the sample file, do:
 
-    $ psql -d mootiro -f /path/to/dbsample.sql
+    $ psql -d your_db -f /path/to/dbsample.sql
 
 Running API on localhost:8000
 --------------------------------
