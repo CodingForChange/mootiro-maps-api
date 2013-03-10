@@ -16,6 +16,28 @@ The API dependencies are listed in requirements.txt file.
 * bottle
 * psycopg2
 
+Installing and configuring the sample database
+-------------------------------------------------
+
+Before you run the API, you must have to install and configure a local database. For this project we used the PostgreSQL and you can find a sample database in the folder "samples".
+
+If you are using a debian-like operating system, do the commands bellow to install the PostgreSQL:
+
+    $ sudo apt-get install postgresql
+
+To configure PostgreSQL correctly to use do:
+
+    $ sudo su postgres
+    $ createuser your_user
+    $ createdb your_db
+    $ exit
+    $ sudo su postgres -c psql
+    postgres=# alter role your_user with encrypted password 'your_pass';
+
+And to import the sample file, do:
+
+    $ psql -d mootiro -f /path/to/dbsample.sql
+
 Running API on localhost:8000
 --------------------------------
 
